@@ -47,3 +47,10 @@ This file lets you run fast similarity search without recomputing embeddings fro
 All photos are by GARE IN FOTO.
 Special thanks to the photographers Antonio, Franco, and Gabriele.
 https://www.gareinfoto.com/galleria-foto-2026-1-semestre/
+
+## Technical details
+- Face detection uses `MTCNN` from `facenet-pytorch`.
+- Face embeddings are extracted with `InceptionResnetV1` pretrained on `VGGFace2`.
+- Each detected face is represented as a 512-dimensional embedding vector.
+- Matching is done with cosine similarity, with Euclidean distance also reported for reference.
+- The notebook is designed to run in a Python environment with PyTorch, and it uses Google Drive paths for input images and saved embeddings when executed in Colab.
